@@ -9,7 +9,7 @@ local y = fu:GetMousePos()[2]
 win = disp:AddWindow({
     ID = 'ButtonControlWin',
     TargetID = 'ButtonControlWin',
-    WindowTitle = 'Font Browser',
+    WindowTitle = 'Icon Browser',
     Geometry = { width, height },
 
 
