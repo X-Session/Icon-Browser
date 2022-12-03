@@ -127,6 +127,11 @@ win = disp:AddWindow({
                     Icon = ui:Icon { File = icon .. 'Wallet0104.png', }, },
                 ui:Button { ID = 'WiFi0104', Flat = true,  Margin = 10, Spacing = 0, MinimumSize = { 30, 20 },MaximumSize = { 50, 30 },  IconSize = { 64, 64 },
                     Icon = ui:Icon { File = icon .. 'WiFi0104.png', }, },
+                    
+            ui:Button { ID = 'logo', Flat = true, Margin = 15, Spacing = 10, MinimumSize = { 330, 50 },
+            MaximumSize = { 330, 150 }, Flat = true, IconSize = { 330, 152 },
+            Icon = ui:Icon { File = "Scripts:/Comp/" .. 'X-Session.png', }, },
+           
 
             },
 
