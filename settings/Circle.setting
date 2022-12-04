@@ -1,0 +1,197 @@
+{
+	Tools = ordered() {
+		Circle = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "PolylineStroke1",
+					Source = "CircleBrush.Size",
+					Name = "Stroke size",
+					Default = 0.015,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "PolylineStroke1",
+					Source = "Center",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "PolylineStroke1",
+					Source = "StrokeSize",
+					Default = 1.1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftGreen",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftBlue",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Background3 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.091, -95.8452 } },
+				},
+				Paint1 = Paint {
+					Inputs = {
+						Input = Input {
+							SourceOp = "Background3",
+							Source = "Output",
+						},
+						Paint = Input {
+							SourceOp = "PolylineStroke1",
+							Source = "Out",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.091, -62.8452 } },
+				},
+				PolylineStroke1 = PolylineStroke {
+					Points = {
+					},
+					IsThreaded = false,
+					Brushes = { "CircleBrush" },
+					ApplyModes = { "PaintApplyColor" },
+					CtrlWZoom = false,
+					Inputs = {
+						BrushControls = Input { Value = 1, },
+						BrushShape = Input { Value = FuID { "CircleBrush" }, },
+						["CircleBrush.Size"] = Input { Value = 0.015, },
+						StrokeControls = Input { Value = 1, },
+						WriteOnStart = Input {
+							SourceOp = "PolylineStroke1Start",
+							Source = "Value",
+						},
+						WriteOnEnd = Input {
+							SourceOp = "PolylineStroke1End",
+							Source = "Value",
+						},
+						StrokeAngle = Input {
+							SourceOp = "PolylineStroke1Angle",
+							Source = "Value",
+						},
+						StrokeSize = Input { Value = 1.1, },
+						Polyline = Input {
+							Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = -0.125173671413685, Y = -0.000617283950617248, LX = 8.45442188872723e-018, LY = 0.122729944406843, RX = -8.45442188872723e-018, RY = -0.122729944406843 },
+									{ X = -0.000173671413685318, Y = -0.222839506172839, LX = -0.0690355937288492, LY = 2.25451250366059e-017, RX = 0.0690355937288492, RY = -2.25451250366059e-017 },
+									{ X = 0.124826328586315, Y = -0.00061728395061733, LX = -1.69088437774545e-017, LY = -0.122729944406843, RX = 1.69088437774545e-017, RY = 0.122729944406843 },
+									{ X = -0.000173671413685256, Y = 0.221604938271605, LX = 0.0690355937288492, LY = -3.75752083943432e-017, RX = -0.0690355937288492, RY = 3.75752083943432e-017 }
+								}
+							},
+						},
+					},
+				},
+				PolylineStroke1Start = BezierSpline {
+					SplineColor = { Red = 232, Green = 6, Blue = 244 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 9.14, 0 } },
+						[15] = { 0, LH = { 10, 0 } }
+					}
+				},
+				PolylineStroke1End = BezierSpline {
+					SplineColor = { Red = 72, Green = 233, Blue = 54 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 9.1, -0.004 } },
+						[15] = { 1, LH = { 4.06, 1 }, RH = { 52.3295993804932, 1 } },
+						[127] = { 1, LH = { 89.6704006195068, 1 }, RH = { 137.94, 1 } },
+						[142] = { 0, LH = { 132.9, -0.004 } }
+					}
+				},
+				PolylineStroke1Angle = BezierSpline {
+					SplineColor = { Red = 14, Green = 221, Blue = 144 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { -90, RH = { 7.96, -90 } },
+						[15] = { 0, LH = { 4.2, 0 }, RH = { 52.3295993804932, 0 } },
+						[127] = { 0, LH = { 89.6704006195068, 0 }, RH = { 137.8, 0 } },
+						[142] = { -90, LH = { 134.04, -90 } }
+					}
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Paint1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "In" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.091, -29.8452 } },
+				},
+				Background1 = Background {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 525.054, -0.307905 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 380.091, 49.5 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 144, },
+						StretchStart = Input { Value = 30, },
+						StretchEnd = Input { Value = 120, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 490.091, 49.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Circle"
+}

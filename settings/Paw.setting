@@ -1,0 +1,411 @@
+{
+	Tools = ordered() {
+		Paw = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Color",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Color",
+					Source = "TopLeftGreen",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Color",
+					Source = "TopLeftBlue",
+					ControlGroup = 1,
+					Default = 1,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Color",
+					Source = "TopLeftAlpha",
+					ControlGroup = 1,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Resize1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Polygon2 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Maximum" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon2Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -215.499 } },
+				},
+				Polygon2Polyline = BezierSpline {
+					SplineColor = { Red = 96, Green = 255, Blue = 47 },
+					NameSet = true,
+					KeyFrames = {
+						[54] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = 0.246347665786743, Y = 0.372761711478233, LX = 0.022615235298872, LY = -0.0333398431539536, RX = -0.0246171875, RY = 0.036294921875 },
+									{ X = 0.149634778499603, Y = 0.429871089756489, LX = 0.0368457026779652, LY = 0, RX = -0.03684765625, RY = 0 },
+									{ X = 0.0529218912124634, Y = 0.372761711478233, LX = 0.0246171876788139, LY = 0.0362929701805115, RX = -0.02261328125, RY = -0.033341796875 },
+									{ X = 0.0178535580635071, Y = 0.249470710754395, LX = 0, LY = 0.0461640618741512, RX = 0, RY = -0.0461640625 },
+									{ X = 0.0529218912124634, Y = 0.126179695129395, LX = -0.022615235298872, LY = 0.0333417952060699, RX = 0.0246171875, RY = -0.03629296875 },
+									{ X = 0.149634778499603, Y = 0.0690703094005585, LX = -0.0368457026779652, LY = 0, RX = 0.03684765625, RY = 0 },
+									{ X = 0.246347665786743, Y = 0.126179695129395, LX = -0.0246171876788139, LY = -0.0362929701805115, RX = 0.02261328125, RY = 0.033341796875 },
+									{ X = 0.281415998935699, Y = 0.249470710754395, LX = 0, LY = -0.0461640618741512, RX = 1.66893004971413e-008, RY = 0.0461640548706055 }
+								}
+							} }
+					}
+				},
+				Polygon1 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Maximum" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -248.499 } },
+				},
+				Polygon1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					NameSet = true,
+					KeyFrames = {
+						[24] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = 0.210454761981964, Y = -0.0748240947723389, LX = 0.0513120293617249, LY = -0.0717095136642456, RX = -0.0570854544639587, RY = 0.0797791182994843 },
+									{ X = 0.0072750449180603, Y = 0.0488918423652649, LX = 0.0739386677742004, LY = 0, RX = -0.0739386677742004, RY = 0 },
+									{ X = -0.195903033018112, Y = -0.0748240947723389, LX = 0.0570821613073349, LY = 0.0797791182994843, RX = -0.0513103008270264, RY = -0.071709543466568 },
+									{ X = -0.277845740318298, Y = -0.316576391458511, LX = 0, LY = 0.079667866230011, RX = 0, RY = -0.0387003123760223 },
+									{ X = -0.247466892004013, Y = -0.404194921255112, LX = -0.0201575458049774, LY = 0.0194403231143951, RX = 0.0198957324028015, RY = -0.0191890299320221 },
+									{ X = -0.171998649835587, Y = -0.429872989654541, LX = -0.029305025935173, LY = -1.9371509552002e-006, RX = 0.0311825722455978, RY = 0 },
+									{ X = -0.0721719861030579, Y = -0.415298998355865, LX = -0.0340196043252945, LY = -0.00722372531890869, RX = 0.0297276079654694, RY = 0.00631257891654968 },
+									{ X = 0.00727671384811401, Y = -0.403024882078171, LX = -0.0216423571109772, LY = 0, RX = 0.0186793804168701, RY = 0 },
+									{ X = 0.0801714062690735, Y = -0.414673715829849, LX = -0.0278782248497009, LY = 0.00599035620689392, RX = 0.0651541352272034, RY = -0.0140024125576019 },
+									{ X = 0.261834681034088, Y = -0.403487145900726, LX = -0.0426599979400635, LY = -0.0410557687282562, RX = 0.0202802419662476, RY = 0.0195170342922211 },
+									{ X = 0.292397499084473, Y = -0.316576391458511, LX = 0, LY = -0.038151741027832, RX = 1.66893005371094e-006, RY = 0.0796678513288498 }
+								}
+							} }
+					}
+				},
+				Polygon3 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon2",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Maximum" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon3Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -182.499 } },
+				},
+				Polygon3Polyline = BezierSpline {
+					SplineColor = { Red = 96, Green = 255, Blue = 47 },
+					NameSet = true,
+					KeyFrames = {
+						[54] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = -0.0529199242591858, Y = 0.372763678431511, LX = 0.0226132813841105, LY = -0.0333398431539536, RX = -0.0246171875, RY = 0.036294921875 },
+									{ X = -0.149632811546326, Y = 0.429873056709766, LX = 0.0368476547300816, LY = 0, RX = -0.0368476547300816, RY = 0 },
+									{ X = -0.246345698833466, Y = 0.372763678431511, LX = 0.0246152337640524, LY = 0.0362929701805115, RX = -0.02261328125, RY = -0.033341796875 },
+									{ X = -0.281414061784744, Y = 0.249472677707672, LX = 0, LY = 0.0461640618741512, RX = 0, RY = -0.0461640618741512 },
+									{ X = -0.246345698833466, Y = 0.126181662082672, LX = -0.022615235298872, LY = 0.0333417952060699, RX = 0.0246171875, RY = -0.036294921875 },
+									{ X = -0.149632811546326, Y = 0.0690703392028809, LX = -0.0368476547300816, LY = 0, RX = 0.0368476547300816, RY = 0 },
+									{ X = -0.0529199242591858, Y = 0.126181662082672, LX = -0.0246171876788139, LY = -0.0362949222326279, RX = 0.02261328125, RY = 0.033341796875 },
+									{ X = -0.0178515613079071, Y = 0.249472677707672, LX = 0, LY = -0.0461660139262676, RX = -1.95431709287819e-006, RY = 0.0461640410423279 }
+								}
+							} }
+					}
+				},
+				Polygon4 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon3",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Maximum" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon4Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -149.499 } },
+				},
+				Polygon4Polyline = BezierSpline {
+					SplineColor = { Red = 96, Green = 255, Blue = 47 },
+					NameSet = true,
+					KeyFrames = {
+						[54] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = 0.494177758693695, Y = 0.0895839929580688, LX = 0.00898046884685755, LY = -0.0305410157889128, RX = -0.00992382812500003, RY = 0.0337578125 },
+									{ X = 0.434285163879395, Y = 0.158650398254395, LX = 0.0286972653120756, LY = -0.0107792969793081, RX = -0.02309375, RY = 0.008673828125 },
+									{ X = 0.360880851745605, Y = 0.15450781583786, LX = 0.0242421869188547, LY = 0.0113457031548023, RX = -0.033408203125, RY = -0.0156328125 },
+									{ X = 0.285966813564301, Y = 0.0659433603286743, LX = 0.0141992187127471, LY = 0.0406503900885582, RX = -0.0116035156249999, RY = -0.03321875 },
+									{ X = 0.281894564628601, Y = -0.0329277515411377, LX = -0.00897851586341858, LY = 0.0305410157889128, RX = 0.00992382812500003, RY = -0.0337578125 },
+									{ X = 0.341789066791534, Y = -0.101994156837463, LX = -0.0286992192268372, LY = 0.0107792969793081, RX = 0.00993164062499996, RY = -0.00373046875000005 },
+									{ X = 0.372847676277161, Y = -0.107578158378601, LX = -0.0106484377756715, LY = 0, RX = 0.014115234375, RY = 0 },
+									{ X = 0.415195345878601, Y = -0.097851574420929, LX = -0.013818359002471, LY = -0.00646679708734155, RX = 0.033408203125, RY = 0.0156328125 },
+									{ X = 0.490109384059906, Y = -0.00928908586502075, LX = -0.0141992187127471, LY = -0.0406484380364418, RX = 0, RY = 6.55651092529297e-007 },
+									{ Linear = true, X = 0.490109384059906, Y = -0.00928711891174316, LX = 0, LY = -6.51041659693874e-007, RX = 0.0116015534400939, RY = 0.0332168064117432 }
+								}
+							} }
+					}
+				},
+				Polygon5 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon4",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Maximum" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon5Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -116.499 } },
+				},
+				Polygon5Polyline = BezierSpline {
+					SplineColor = { Red = 96, Green = 255, Blue = 47 },
+					NameSet = true,
+					KeyFrames = {
+						[54] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = -0.285962894558907, Y = 0.0659472644329071, LX = 0.0116015626117587, LY = -0.0332207046449184, RX = -0.014201171875, RY = 0.040650390625 },
+									{ X = -0.360876962542534, Y = 0.154509752988815, LX = 0.0334062501788139, LY = -0.0156328119337559, RX = -0.024244140625, RY = 0.011345703125 },
+									{ X = -0.434283211827278, Y = 0.15865233540535, LX = 0.023091796785593, LY = 0.00867187511175871, RX = -0.02869921875, RY = -0.01078125 },
+									{ X = -0.494177742861211, Y = 0.089585930109024, LX = 0.00992382783442736, LY = 0.033755861222744, RX = -0.00897851562499996, RY = -0.030541015625 },
+									{ X = -0.490105477161705, Y = -0.00928515195846558, LX = -0.0116035155951977, LY = 0.0332167968153954, RX = 0, RY = -6.55651092529297e-007 },
+									{ Linear = true, X = -0.490105477161705, Y = -0.00928711891174316, LX = 0, LY = 6.51041659693874e-007, RX = 0.014203125, RY = -0.040650390625 },
+									{ X = -0.415191411972046, Y = -0.0978496074676514, LX = -0.0334062501788139, LY = 0.0156328119337559, RX = 0.0138203125, RY = -0.00646679687499996 },
+									{ X = -0.372843757271767, Y = -0.107576191425323, LX = -0.014115234836936, LY = 0, RX = 0.0106484375, RY = 0 },
+									{ X = -0.341785162687302, Y = -0.101992189884186, LX = -0.00992968771606684, LY = -0.00372851570136845, RX = 0.028703125, RY = 0.01078125 },
+									{ X = -0.28188867866993, Y = -0.0329257845878601, LX = -0.00992382783442736, LY = -0.033755861222744, RX = 0.00897461616992951, RY = 0.0305390658378601 }
+								}
+							} }
+					}
+				},
+				Background1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon5",
+							Source = "Mask",
+						},
+						Width = Input { Value = 800, },
+						Height = Input { Value = 800, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -83.4994 } },
+				},
+				Transform2 = Transform {
+					Inputs = {
+						Size = Input {
+							SourceOp = "Transform2Size",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "Transform2Angle",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 407.136, -36.9734 } },
+				},
+				Transform2Size = BezierSpline {
+					SplineColor = { Red = 225, Green = 0, Blue = 225 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 5, 0 } },
+						[15] = { 1, LH = { 4.875, 1 }, RH = { 44.3303995132446, 1 } },
+						[103] = { 1, LH = { 73.6696004867554, 1 }, RH = { 113.125, 1 } },
+						[118] = { 0, LH = { 113, 0 } }
+					}
+				},
+				Transform2Angle = BezierSpline {
+					SplineColor = { Red = 14, Green = 221, Blue = 144 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { -20, RH = { 5, -20 } },
+						[15] = { 0, LH = { 0.826199570668809, -0.524709858028032 }, RH = { 44.3303995132446, 0 } },
+						[103] = { 0, LH = { 73.6696004867554, 0 }, RH = { 113.594418552844, -0.0942101860709432 } },
+						[118] = { -15, LH = { 113, -15 } }
+					}
+				},
+				Color = Background {
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 569.089, -30.4112 } },
+				},
+				Resize1 = BetterResize {
+					CtrlWZoom = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						HiQOnly = Input { Value = 0, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Input = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 819.063, 42.1409 } },
+				},
+				Background2 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 175.368, 42.1409 } },
+				},
+				Merge4 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Color",
+							Source = "Output",
+						},
+						Operator = Input { Value = FuID { "In" }, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 569.089, 42.1409 } },
+				},
+				Merge2 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 457.948, 42.1409 } },
+				},
+				Transform1 = Transform {
+					Inputs = {
+						Input = Input {
+							SourceOp = "Merge4",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 696.991, 42.1409 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 317.84, 42.1409 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Paw"
+}

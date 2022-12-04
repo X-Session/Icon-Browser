@@ -1,0 +1,213 @@
+{
+	Tools = ordered() {
+		Flash = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftGreen",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftBlue",
+					ControlGroup = 1,
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Background1",
+					Source = "TopLeftAlpha",
+					ControlGroup = 1,
+					Default = 1,
+				},
+			},
+			Outputs = {
+				Output1 = InstanceOutput {
+					SourceOp = "Path1",
+					Source = "Heading",
+				},
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Polygon1 = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Maximum" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Polyline = Input {
+							SourceOp = "Polygon1Polyline",
+							Source = "Value",
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -15.4756, -72.3061 } },
+				},
+				Polygon1Polyline = BezierSpline {
+					SplineColor = { Red = 173, Green = 255, Blue = 47 },
+					NameSet = true,
+					KeyFrames = {
+						[1] = { 0, Flags = { Linear = true, LockedY = true }, Value = Polyline {
+								Closed = true,
+								Points = {
+									{ X = 0.281773447990417, Y = 0.157033205032349, LX = 0.0027324219699949, LY = -0.00588281266391277, RX = -0.002732421875, RY = 0.00586718749999998 },
+									{ X = 0.266673862934113, Y = 0.166666030883789, LX = 0.00648242188617587, LY = 0, RX = -0.0658333301544189, RY = 0 },
+									{ Linear = true, X = 0.0691738724708557, Y = 0.166666030883789, LX = 0.0658333301544189, LY = 0, RX = 0.0649720033009847, RY = 0.102583333229025 },
+									{ Linear = true, X = 0.26408988237381, Y = 0.474416030570865, LX = -0.0649720057845116, LY = -0.102583333849907, RX = 0.00324999999999998, RY = 0.00513281249999997 },
+									{ X = 0.264607489109039, Y = 0.491365249268711, LX = 0.00293164071626961, LY = -0.00531640602275729, RX = -0.00293366098403935, RY = 0.00533396948128939 },
+									{ X = 0.250005841255188, Y = 0.5, LX = 0.00606640614569187, LY = 0, RX = -0.0888886650403341, RY = 0 },
+									{ Linear = true, X = -0.0166601538658142, Y = 0.5, LX = 0.0888886675238609, LY = 0, RX = -0.00631640625000002, RY = 0 },
+									{ X = -0.0315761566162109, Y = 0.490783203393221, LX = 0.00283203134313226, LY = 0.00565039040520787, RX = -0.0833333333333333, RY = -0.166666662941376 },
+									{ Linear = true, X = -0.281576156616211, Y = -0.0092167854309082, LX = 0.0833333358168602, LY = 0.16666667163372, RX = -0.00258398437499996, RY = -0.005150390625 },
+									{ X = -0.280843734741211, Y = -0.0254160165786743, LX = -0.00303320307284594, LY = 0.0049160155467689, RX = 0.00305078125000002, RY = -0.00491601562499999 },
+									{ X = -0.266660138964653, Y = -0.0333320498466492, LX = -0.00578320305794477, LY = 0, RX = 0.0571275999148687, RY = 0 },
+									{ Linear = true, X = -0.095277339220047, Y = -0.0333320498466492, LX = -0.0571276023983955, LY = 0, RX = -0.0622499982515971, RY = -0.147844394048055 },
+									{ Linear = true, X = -0.282027333974838, Y = -0.476865231990814, LX = 0.0622499994933605, LY = 0.147844403982162, RX = -0.00318359374999999, RY = -0.00758398437499996 },
+									{ X = -0.275361314415932, Y = -0.497548818588257, LX = -0.00701562501490116, LY = 0.00430078106001019, RX = 0.00269921875000001, RY = -0.00165039062500005 },
+									{ X = -0.266677722334862, Y = -0.499998033046722, LX = -0.00298437499441206, LY = 0, RX = 0.00478320312500002, RY = 0 },
+									{ X = -0.253910139203072, Y = -0.494082033634186, LX = -0.00326757808215916, LY = -0.00386523432098329, RX = 0.177777990698814, RY = 0.21111132701238 },
+									{ Linear = true, X = 0.279423832893372, Y = 0.139251947402954, LX = -0.177777990698814, LY = -0.211111322045326, RX = 0.00418163585662845, RY = 0.0049648494720459 }
+								}
+							} }
+					}
+				},
+				Background1 = Background {
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Polygon1",
+							Source = "Mask",
+						},
+						Width = Input { Value = 800, },
+						Height = Input { Value = 800, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -15.4756, 0 } },
+				},
+				Transform1 = Transform {
+					Inputs = {
+						Center = Input {
+							SourceOp = "Path1",
+							Source = "Position",
+						},
+						Size = Input {
+							SourceOp = "Transform1Size",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "Transform1Angle",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 156.659, 49.5 } },
+				},
+				Path1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = 0.296, Y = 0.519, RX = -0.0986666666666667, RY = -0.173 },
+									{ Linear = true, LockY = true, X = 0, Y = 0, LX = 0.0986666666666667, LY = 0.173 }
+								}
+							},
+						},
+					},
+				},
+				Path1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 178 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 10, 0 }, Flags = { LockedY = true } },
+						[15] = { 1, LH = { 4.56, 1 }, RH = { 52.3295993804932, 1 }, Flags = { LockedY = true } },
+						[127] = { 1, LH = { 89.6704006195068, 1 }, RH = { 137.44, 1 } },
+						[142] = { 0, LH = { 132, 0 } }
+					}
+				},
+				Transform1Size = BezierSpline {
+					SplineColor = { Red = 225, Green = 0, Blue = 225 },
+					NameSet = true,
+					KeyFrames = {
+						[0] = { 0, RH = { 8.42, 0 } },
+						[15] = { 1, LH = { 5.5, 1 }, RH = { 52.3295993804932, 1 } },
+						[127] = { 1, LH = { 89.6704006195068, 1 }, RH = { 136.5, 1 } },
+						[142] = { 0, LH = { 133.58, 0 } }
+					}
+				},
+				Transform1Angle = BezierSpline {
+					SplineColor = { Red = 14, Green = 221, Blue = 144 },
+					NameSet = true,
+					KeyFrames = {
+						[15] = { 0, RH = { 52.3295993804932, 0 } },
+						[127] = { 0, LH = { 89.6704006195068, 0 } }
+					}
+				},
+				Background2 = Background {
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 270.091, -16.11 } },
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 270.091, 49.5 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWZoom = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "Merge1",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 144, },
+						StretchStart = Input { Value = 30, },
+						StretchEnd = Input { Value = 120, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 448.578, 49.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Flash"
+}
