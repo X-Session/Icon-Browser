@@ -1,4 +1,6 @@
-icon = "Scripts:Comp/X-Session/Icons/Icons/"
+--C:\Users\biswa\AppData\Roaming\Blackmagic Design\Fusion\Scripts\Comp\Icon-Browser
+icon = "Scripts:Comp/Icon-Browser/Icons/"
+
 
 local ui = fu.UIManager
 local disp = bmd.UIDispatcher(ui)
